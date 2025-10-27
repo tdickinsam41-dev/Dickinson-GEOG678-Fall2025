@@ -6,12 +6,12 @@ Content for GEOG678 class
 
 | Lab | Link |
 |---|---|
-| lab1 | [Open](lab1/) |
-| lab2 | [Open](lab2/) |
-| lab3 | [Open](lab3/) |
-| lab4 | [Open](lab4/) |
-| lab5 | [Open](lab5/) |
-| lab6 | [Open](lab6/) |
-| lab7 | [Open](lab7/) |
-| lab8 | [Open](lab8/) |
+| Lab 1 | [Open](Lab1/) |
+| Lab 2 | [Open](Lab2/) |
+| Lab 3 | [Open](Lab3/) |
+| Lab 4 | [Open](Lab4/) |
+| Lab 5 | [Open](Lab5/) |
+| Lab 6 | [Open](Lab6/) |
+| Lab 7 | [Open](Lab7/) |
+| Lab 8 | [Open](Lab8/) |
 
