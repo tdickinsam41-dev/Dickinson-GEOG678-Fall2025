@@ -11,6 +11,6 @@
 
 ##### Second Task
 
-[Screenshot of Field Maps Collector](field_maps_collector.jpg)
+[Screenshot of Field Maps Collector](field_maps_collector.jpeg)
 
 
