@@ -3,7 +3,7 @@
 
 #### Tasks to Complete
 1. Complete Code Academy Online Tutorial for HTML and CSS
-1. Create online resume
+1. Create your own resume site
 
 ##### Task 1
 Here are the screenshots showing that the online tutorial was completed:
@@ -16,4 +16,8 @@ Screenshot 2:
 
 
 ##### Task 2
+Build your own resume site
 
+Online Resume: [Resume](myresume.html)
+
+Screenshot of html: 
