@@ -13,3 +13,7 @@ Screenshot 1:
 
 Screenshot 2:
 [Introduction to CSS](CSS_Syntax_And_Selectors_Course.jpeg)
+
+
+##### Task 2
+
