@@ -9,10 +9,10 @@
 Here are the screenshots showing that the online tutorial was completed:
 
 Screenshot 1:
-[Introduction to HTML](Intro_To_HTML_Course.jpeg)
+[Introduction to HTML](Intro_To_HTML_Course.jpg)
 
 Screenshot 2:
-[Introduction to CSS](CSS_Syntax_And_Selectors_Course.jpeg)
+[Introduction to CSS](CSS_Syntax_And_Selectors_Course.jpg)
 
 
 ##### Task 2
