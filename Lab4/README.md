@@ -14,7 +14,8 @@
 ---
 
 #### Output Screen Capture
-Here is the screen capture from task 8:
+Here is the screen capture from task 8 showing email and the points from the data set
+for the bounding box:
 
 ![Screenshot of online resume](Lab4_output.jpg)
 
