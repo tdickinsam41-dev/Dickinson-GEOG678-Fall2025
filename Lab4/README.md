@@ -13,5 +13,8 @@
 
 ---
 
-#### Task 1 – Create and link the HTML and Javascript pages
+#### Output Screen Capture
+Here is the screen capture from task 8:
+
+![Screenshot of online resume](Lab4_output.jpg)
 
