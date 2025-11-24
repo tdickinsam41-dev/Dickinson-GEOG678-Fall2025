@@ -1,0 +1,20 @@
+/* windows and margins */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/*  header styling*/
+h1 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* define height */
+#map {
+    height: 180px;   /* requirement */
+    width: 100%;
+    border: 1px solid #ccc;
+}

@@ -1,0 +1,20 @@
+/* Set layout and size */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* header styling  */
+h1 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Map must have a defined height */
+#map {
+    height: 360px;   /* requirement */
+    width: 100%;
+    border: 1px solid #ccc;
+}

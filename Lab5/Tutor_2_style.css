@@ -1,0 +1,17 @@
+/* fill browser window */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Make the page itself 100% tall */
+html, body {
+    height: 100%;
+}
+
+/* fill the entire viewport width and height */
+#map {
+    height: 100%;
+    width: 100vw;
+}
