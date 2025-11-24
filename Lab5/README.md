@@ -18,4 +18,4 @@ Tutorial 3 output is displayed below:
 
 ##### Task 2
 Custom Map Output:
-![Screenshot of custom output](custom_output.jpg)
+![Screenshot of custom output](custom_map_output.jpg)
