@@ -12,6 +12,7 @@ Content for GEOG678 class
 | Lab 4 | [Open](Lab4/) |
 | Lab 5 | [Open](Lab5/) |
 | Lab 6 | [Open](Lab6/) |
+| Lab 06b | [Open](Lab06b) |
 | Lab 7 | [Open](Lab7/) |
 | Lab 8 | [Open](Lab8/) |
 
