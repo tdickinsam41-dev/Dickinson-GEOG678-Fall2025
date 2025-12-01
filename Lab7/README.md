@@ -13,5 +13,7 @@ Here is the screenshot for the 2D storymap:
 ![Screenshot of custom output](2D_screenshot.jpg)
 
 
+
+
 Here is the screenshot for the storymap that uses 3D building map:
 ![Screenshot of custom output](3D_screenshot.jpg)
