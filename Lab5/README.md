@@ -19,3 +19,6 @@ Tutorial 3 output is displayed below:
 ##### Task 2
 Custom Map Output:
 ![Screenshot of custom output](custom_map_output.jpg)
+
+This second screenshot shows the coordinates after a mouse click:
+![Screenshot of custom output](custom_onclick_screenshot.jpg)
