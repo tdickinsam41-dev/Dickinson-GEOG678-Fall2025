@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highcharts Temperature Chart</title>
+    
+    <!-- Core Highcharts -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <!-- Extra module that contains arearange -->
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #container { height: 400px; width: 100%; max-width: 800px; }
+    </style>
+</head>
+<body>
+    
+    <div id="container"></div>
+
+    <script>
+        // --- DATA PREPARATION ---
+        const rawData = [
+            { day: "Sat", high: 82, low: 67 },
+            { day: "Sun", high: 81, low: 59 },
+            { day: "Mon", high: 81, low: 50 },
+            { day: "Tue", high: 70, low: 47 },
+            { day: "Wed", high: 77, low: 51 },
+            { day: "Thu", high: 78, low: 60 },
+            { day: "Fri", high: 79, low: 66 },
+            { day: "Sat", high: 80, low: 66 }
+        ];
+
+        // Categories for the X-axis
+        const categories = rawData.map(item => item.day);
+
+        // Arearange needs [x, low, high]
+        const rangeData = rawData.map((item, index) => [index, item.low, item.high]);
+
+        // (Optional) average line
+        const avgTemps = rawData.map(item => (item.high + item.low) / 2);
+
+        // --- CHART CONFIGURATION ---
+        Highcharts.chart('container', {
+            chart: {
+                type: 'arearange'   // default type for the main series
+            },
+            
+            title: {
+                text: 'Weekly Temperature Forecast for College Station'
+            },
+            
+            xAxis: {
+                categories: categories,   // 0 → 'Sat', 1 → 'Sun', etc.
+                tickmarkPlacement: 'on'
+            },
+            
+            yAxis: {
+                title: {
+                    text: 'Temperature (°F)'
+                }
+            },
+
+            tooltip: {
+                shared: true,
+                crosshairs: true,
+                valueSuffix: '°F'
+            },
+
+            legend: {
+                enabled: true
+            },
+
+            series: [{
+                name: 'Low–High Range',
+                data: rangeData,
+                // You can tweak styling if you want:
+                // color: 'rgba(255,0,0,0.3)',
+                // lineColor: 'red',
+                // fillOpacity: 0.3
+            }, {
+                // Optional: average line on top of the band
+                type: 'line',
+                name: 'Average',
+                data: avgTemps,
+                marker: {
+                    enabled: true
+                }
+            }]
+        });
+    </script>
+
+</body>
+</html>

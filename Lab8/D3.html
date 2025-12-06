@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>College Station Weekly Temperature Forecast</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- set the style for the chart -->
+    <style>
+        #chart div{
+            font: 10px sans-serif;
+            background-color: steelblue;
+            text-align: right;
+            padding: 3px;
+            margin: 1px;
+            color: white;
+        }
+    </style>
+    
+  </head>
+  <body>
+
+    <h2>Weekly Temperature Forecast for College Station</h2>
+    <div id="chart"></div>
+
+    <script>
+        // DATA
+        const data = [
+            { day: "Sat", high: 82, low: 67 },
+            { day: "Sun", high: 81, low: 59 },
+            { day: "Mon", high: 81, low: 50 },
+            { day: "Tue", high: 70, low: 47 },
+            { day: "Wed", high: 77, low: 51 },
+            { day: "Thu", high: 78, low: 60 },
+            { day: "Fri", high: 79, low: 66 },
+            { day: "Sat", high: 80, low: 66 }
+        ];
+
+        // DIMENSIONS
+        const margin = {top: 20, right: 30, bottom: 70, left: 40};
+        const width = 600 - margin.left - margin.right;
+        const height = 400 - margin.top - margin.bottom;
+
+        // CREATE SVG CONTAINER
+        const svg = d3.select("#chart")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", `translate(${margin.left},${margin.top})`);
+
+        // set scales for appearance
+        // X Scale: Use index (0-7) to space out the days evenly
+        const x = d3.scaleLinear()
+            .domain([0, data.length - 1])
+            .range([0, width]);
+
+        // Y Scale: 40 to 90 degrees
+        const y = d3.scaleLinear()
+            .domain([40, 90])
+            .range([height, 0]);
+
+        // Define x and y axis
+        // format to show Day Name instead of index
+        svg.append("g")
+            .attr("transform", `translate(0,${height})`)
+            .call(d3.axisBottom(x)
+                .ticks(data.length)
+                .tickFormat((d, i) => data[d].day) 
+            );
+
+        // Left Axis
+        svg.append("g")
+            .call(d3.axisLeft(y));
+
+        // Draw line with highs (RED)
+        
+        // The Line
+        svg.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("fill", "none")      // "none" prevents black shading
+            .attr("stroke", "red")
+            .attr("d", d3.line()
+                .x((d, i) => x(i))
+                .y(d => y(d.high))
+            );
+
+        // Points
+        svg.selectAll(".dot-high")
+            .data(data)
+            .enter()
+            .append("circle")
+            .attr("cx", (d, i) => x(i))
+            .attr("cy", d => y(d.high))
+            .attr("r", 5)
+            .attr("fill", "red");
+
+        // draw lines with lows (blue)
+
+        // the Line
+        svg.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("fill", "none")      // Prevents black shading
+            .attr("stroke", "blue")
+            .attr("d", d3.line()
+                .x((d, i) => x(i))
+                .y(d => y(d.low))
+            );
+
+        // Points
+        svg.selectAll(".dot-low")
+            .data(data)
+            .enter()
+            .append("circle")
+            .attr("cx", (d, i) => x(i))
+            .attr("cy", d => y(d.low))
+            .attr("r", 5)
+            .attr("fill", "blue");
+
+        // ==========================================
+        // ADD THE LEGEND
+        // ==========================================
+
+        // Create a container for the legend and move it to the top-right
+        // Changing "translate(450, 10)" moves the whole box
+        const legend = svg.append("g")
+            .attr("transform", "translate(250, 350)"); 
+
+        // --- Legend Item 1 (Highs) ---
+
+        // Red Square
+        legend.append("rect")
+            .attr("x", 0)
+            .attr("y", 0)
+            .attr("width", 10)
+            .attr("height", 10)
+            .style("fill", "red");
+
+        // Text label "Highs"
+        legend.append("text")
+            .attr("x", 15)      // Shift right of the square
+            .attr("y", 10)      // Align vertically
+            .text("Highs")
+            .style("font-size", "12px")
+            .attr("alignment-baseline", "middle");
+
+        // --- Legend Item 2 (Lows) ---
+
+        // Blue Square (Positioned 20px lower)
+        legend.append("rect")
+            .attr("x", 0)
+            .attr("y", 20)      // Move down 20px
+            .attr("width", 10)
+            .attr("height", 10)
+            .style("fill", "blue");
+
+        // Text label "Lows"
+        legend.append("text")
+            .attr("x", 15)
+            .attr("y", 30)      // Move down 20px (10 + 20)
+            .text("Lows")
+            .style("font-size", "12px")
+            .attr("alignment-baseline", "middle");
+    </script>
+</body>
+</html>

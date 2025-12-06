@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highcharts Temperature Chart</title>
+    
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #container { height: 400px; width: 100%; max-width: 800px; }
+    </style>
+</head>
+<body>
+    
+    <div id="container"></div>
+
+    <script>
+        // data in original format
+        const rawData = [
+            { day: "Sat", high: 82, low: 67 },
+            { day: "Sun", high: 81, low: 59 },
+            { day: "Mon", high: 81, low: 50 },
+            { day: "Tue", high: 70, low: 47 },
+            { day: "Wed", high: 77, low: 51 },
+            { day: "Thu", high: 78, low: 60 },
+            { day: "Fri", high: 79, low: 66 },
+            { day: "Sat", high: 80, low: 66 }
+        ];
+
+        // extract data
+        const categories = rawData.map(item => item.day); // ['Sat', 'Sun', ...]
+        const highTemps  = rawData.map(item => item.high); // [82, 81, ...]
+        const lowTemps   = rawData.map(item => item.low);  // [67, 59, ...]
+
+        // --- CHART CONFIGURATION ---
+        Highcharts.chart('container', {
+            
+            chart: {
+                type: 'line' // The chart type, maybe change to area
+            },
+            
+            title: {
+                text: 'Weekly Temperature Forecast for College Station'
+            },
+            
+            xAxis: {
+                categories: categories // Putting the days on the bottom
+            },
+            
+            yAxis: {
+                title: {
+                    text: 'Temperature (°F)'
+                }
+            },
+            
+            // shows both values on hover
+            tooltip: {
+                shared: true,
+                crosshairs: true
+            },
+
+            // The actual data lines
+            series: [{
+                name: 'High',
+                data: highTemps,
+                color: 'red' 
+            }, {
+                name: 'Low',
+                data: lowTemps,
+                color: 'blue' 
+            }]
+        });
+    </script>
+
+</body>
+</html>
