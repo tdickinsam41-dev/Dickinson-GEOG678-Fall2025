@@ -72,7 +72,7 @@
         svg.append("g")
             .call(d3.axisLeft(y));
 
-        // Draw line with highs (RED)
+        // Draw line with highs 
         
         // The Line
         svg.append("path")
@@ -95,7 +95,7 @@
             .attr("r", 5)
             .attr("fill", "red");
 
-        // draw lines with lows (blue)
+        // draw lines with lows 
 
         // the Line
         svg.append("path")
@@ -123,7 +123,6 @@
         // ==========================================
 
         // Create a container for the legend and move it to the top-right
-        // Changing "translate(450, 10)" moves the whole box
         const legend = svg.append("g")
             .attr("transform", "translate(250, 350)"); 
 
@@ -150,7 +149,7 @@
         // Blue Square (Positioned 20px lower)
         legend.append("rect")
             .attr("x", 0)
-            .attr("y", 20)      // Move down 20px
+            .attr("y", 20)      
             .attr("width", 10)
             .attr("height", 10)
             .style("fill", "blue");
@@ -158,7 +157,7 @@
         // Text label "Lows"
         legend.append("text")
             .attr("x", 15)
-            .attr("y", 30)      // Move down 20px (10 + 20)
+            .attr("y", 30)      
             .text("Lows")
             .style("font-size", "12px")
             .attr("alignment-baseline", "middle");
